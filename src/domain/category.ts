@@ -1,6 +1,7 @@
 export type Category =
-  | 'Karina'
-  | 'Winter'
-  | 'Giselle'
-  | 'Ningning'
-  | 'Aespa'
+  | 'Wonhee'
+  | 'Minju'
+  | 'Hokazono iroha'
+  | 'Sakai moka'
+  | 'Yunah'
+  | 'Illit'
