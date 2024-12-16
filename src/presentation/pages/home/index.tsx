@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {
-  InterstitialAd,
-  AdEventType,
-  TestIds,
-} from 'react-native-google-mobile-ads';
 import { FlatList } from 'react-native';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -29,7 +24,6 @@ import { Props } from './type';
 
 const blurhash =
   '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL);
 
 export const Home: React.FC<Props> = ({ navigation }) => {
   const { setCategory, setWallpaper } = useTheme();
@@ -87,13 +81,6 @@ export const Home: React.FC<Props> = ({ navigation }) => {
     Image.clearMemoryCache();
     getStorageInfo();
     getCategoryList();
-
-    const unsubscribe = interstitial.addAdEventListener(
-      AdEventType.LOADED,
-      () => {}
-    );
-    interstitial.load();
-    return unsubscribe;
   }, []);
 
   return (
@@ -110,7 +97,7 @@ export const Home: React.FC<Props> = ({ navigation }) => {
       <ContainerImageView>
         <ContentAds>
           <BannerAd
-            unitId={'ca-app-pub-6202074218659375/1790767468'}
+            unitId={'ca-app-pub-6202074218659375/6893084164'}
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
             requestOptions={{
               requestNonPersonalizedAdsOnly: true,

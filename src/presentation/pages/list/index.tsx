@@ -1,9 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import {
-  InterstitialAd,
-  AdEventType,
-  TestIds,
-} from 'react-native-google-mobile-ads';
 import { FlatList } from 'react-native';
 import { BannerAd, BannerAdSize } from 'react-native-google-mobile-ads';
 import { Image } from 'expo-image';
@@ -25,7 +20,6 @@ import { Props } from './type';
 
 const blurhash =
   '|rF?hV%2WCj[ayj[a|j[az_NaeWBj@ayfRayfQfQM{M|azj[azf6fQfQfQIpWXofj[ayj[j[fQayWCoeoeaya}j[ayfQa{oLj?j[WVj[ayayj[fQoff7azayj[ayj[j[ayofayayayj[fQj[ayayj[ayfjj[j[ayjuayj[';
-const interstitial = InterstitialAd.createForAdRequest(TestIds.INTERSTITIAL);
 
 export const List: React.FC<Props> = ({ navigation }) => {
   const { category, setWallpaper, theme } = useTheme();
@@ -47,13 +41,6 @@ export const List: React.FC<Props> = ({ navigation }) => {
 
   useEffect(() => {
     getCategoryList();
-
-    const unsubscribe = interstitial.addAdEventListener(
-      AdEventType.LOADED,
-      () => {}
-    );
-    interstitial.load();
-    return unsubscribe;
   }, [category]);
 
   return (
@@ -61,7 +48,7 @@ export const List: React.FC<Props> = ({ navigation }) => {
       <ContainerView>
         <ContentAds>
           <BannerAd
-            unitId={'ca-app-pub-6202074218659375/1790767468'}
+            unitId={'ca-app-pub-6202074218659375/6893084164'}
             size={BannerAdSize.ANCHORED_ADAPTIVE_BANNER}
             requestOptions={{
               requestNonPersonalizedAdsOnly: true,

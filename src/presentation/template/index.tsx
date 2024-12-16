@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar, StatusBarStyle } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -41,13 +41,13 @@ export const TemplateRoot: React.FC<Props> = ({
         <StatusBar
           animated={true}
           backgroundColor={getTheme(theme, '#f3f2f8', '#0F2027')}
-          style={getTheme(theme, 'dark', 'light')}
+          style={getTheme(theme, 'dark', 'light') as StatusBarStyle}
         />
         <HeaderView>
           {page === 'home' && (
             <AlignTitleView>
               <AlignTextView>
-                {/* {theme === 'light' ? (
+                {theme === 'light' ? (
                   <LogoView
                     theme={theme}
                     source={require('../../../assets/logo.png')}
@@ -57,8 +57,8 @@ export const TemplateRoot: React.FC<Props> = ({
                     theme={theme}
                     source={require('../../../assets/logo-white.png')}
                   />
-                )} */}
-                <TitleView theme={theme}>Aespa</TitleView>
+                )}
+                {/* <TitleView theme={theme}>Aespa</TitleView> */}
                 <SubTitleView theme={theme}>WALLPAPER</SubTitleView>
               </AlignTextView>
             </AlignTitleView>
@@ -89,7 +89,7 @@ export const TemplateRoot: React.FC<Props> = ({
             onPress={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
             <Ionicons
-              name={getTheme(theme, 'moon', 'sunny')}
+              name={getTheme(theme, 'moon', 'sunny') as 'moon' | 'sunny'}
               size={25}
               color={theme === 'light' ? '#292d3e' : '#ffffff'}
             />
